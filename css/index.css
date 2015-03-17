@@ -27,5 +27,7 @@ section button
 
 section div
 {
+    width: 700px;
+    text-align: center;
     margin-top: 10px;
 }
