@@ -13,7 +13,19 @@ header h1
     padding-top: 25px;
 }
 
-#questionsButtons
+section
 {
+    text-align: center;
+}
 
+section button
+{
+    width: 700px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+section div
+{
+    margin-top: 10px;
 }
