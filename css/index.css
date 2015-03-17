@@ -1,0 +1,19 @@
+header
+{
+    width: 980px;
+    height: 100px;
+    background-color: rgba(241,241,75,0.9);
+    border-radius: 10px;
+    margin: auto;
+}
+
+header h1
+{
+    text-align: center;
+    padding-top: 25px;
+}
+
+#questionsButtons
+{
+
+}
