@@ -32,3 +32,13 @@ section div
     margin: auto;
     margin-top: 10px;
 }
+
+.textArea
+{
+    width: 650px;
+}
+
+.sending
+{
+    width: 150px;
+}
