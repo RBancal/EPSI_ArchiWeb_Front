@@ -1,16 +1,21 @@
 /**
  * Created by ralph on 18/03/15.
  */
-// var url = "localhost:8000/";
 
-var url = "http://localhost:8000/questions";
+var url = "http://localhost:8080/questions";
+
+function getQuestion() {
+
+}
 
 function sendQuestion() {
-    var question = $('#question').val();
-    var httpRequest = new XMLHttpRequest();
+    var questionObject = {};
 
-    httpRequest.open("POST", url, true);
-    httpRequest.send(question);
+    questionObject.question = $('#question').val();
+    questionObject.isAnswered = false;
+    questionObject.response = null;
 
-
+    $.post(url, questionObject, function(data) {
+        console.log(data);
+    });
 }
