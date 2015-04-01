@@ -5,7 +5,9 @@
 var url = "http://localhost:8080/questions";
 
 function getQuestion() {
+    // Récupération question avec isAnswered à false.
 
+    $('.respHide').show();
 }
 
 function sendQuestion() {

@@ -33,6 +33,11 @@ section div
     margin-top: 10px;
 }
 
+.getting
+{
+    width: auto;
+}
+
 .textArea
 {
     width: 650px;
@@ -42,3 +47,27 @@ section div
 {
     width: 150px;
 }
+
+.respHide
+{
+    display: none;
+}
+
+.objHide
+{
+    display: none;
+}
+
+.objHide label
+{
+    display: block;
+    text-decoration: underline;
+}
+
+.objHide input
+{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+

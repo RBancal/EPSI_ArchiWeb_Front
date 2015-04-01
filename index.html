@@ -8,6 +8,7 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/question.js"></script>
+    <script src="js/response.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +31,14 @@
         </button>
         <div class="collapse" id="collapsePostResponse">
             <div class="well">
-                <button class="sending" type="button" onclick="sendQuestion()">Récupérer une question</button>
+                <button class="getting" type="button" onclick="getQuestion()">Récupérer une question</button>
+                <div class="getting respHide">
+                    <input class="textArea" type="text" name="response" id="questionGetted" disabled>
+                </div>
+                <div class="getting respHide">
+                    <input class="textArea" type="text" name="response" id="response">
+                    <button class="sending" type="button" onclick="sendResponse()">Répondre</button>
+                </div>
             </div>
         </div>
     </section>
@@ -40,7 +48,14 @@
         </button>
         <div class="collapse" id="collapseGetResponse">
             <div class="well">
-                ...
+                <input class="textArea" type="text" name="questionId" id="questionId">
+                <button class="getting" type="button" onclick="getResponse()">Récupérer la réponse à votre question</button>
+                <div class="objHide">
+                    <label>Question</label>
+                    <input class="textArea" type="text" name="question" id="questionAnswered" disabled>
+                    <label>Réponse</label>
+                    <input class="textArea" type="text" name="response" id="questionResponse" disabled>
+                </div>
             </div>
         </div>
     </section>

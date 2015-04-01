@@ -5,7 +5,9 @@
 var url = "http://localhost:8080/questions";
 
 function getResponse () {
+    // Récupération de la réponse à l'aide de l'ID de la question fournie.
 
+    $('.objHide').show();
 }
 
 function sendResponse () {
