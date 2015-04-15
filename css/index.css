@@ -43,6 +43,17 @@ section div
     width: 650px;
 }
 
+#questionLocation
+{
+    margin-top: 5px;
+    display: none;
+}
+
+#idQuestionGetted
+{
+    display: none;
+}
+
 .sending
 {
     width: 150px;

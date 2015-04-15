@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head lang="fr">
-    <meta charset="UTF-8">
-    <title>2037</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/question.js"></script>
-    <script src="js/response.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Interface 2037</h1>
-    </header>
-    <section id="askQuestion">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePostQuestion" aria-expanded="false" aria-controls="collapsePostQuestion">
-            Poser une question !
-        </button>
-        <div class="collapse" id="collapsePostQuestion">
-            <div class="well">
-                <input class="textArea" type="text" name="question" id="question">
-                <button class="sending" type="button" onclick="sendQuestion()">Envoyer</button>
-            </div>
-        </div>
-    </section>
-    <section id="answerQuestion">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePostResponse" aria-expanded="false" aria-controls="collapsePostResponse">
-            Répondre à une question !
-        </button>
-        <div class="collapse" id="collapsePostResponse">
-            <div class="well">
-                <button class="getting" type="button" onclick="getQuestion()">Récupérer une question</button>
-                <div class="getting respHide">
-                    <input class="textArea" type="text" name="response" id="questionGetted" disabled>
-                </div>
-                <div class="getting respHide">
-                    <input class="textArea" type="text" name="response" id="response">
-                    <button class="sending" type="button" onclick="sendResponse()">Répondre</button>
+    <head lang="fr">
+        <meta charset="UTF-8">
+        <title>2037</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/question.js"></script>
+        <script src="js/response.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Interface 2037</h1>
+        </header>
+        <section id="askQuestion">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePostQuestion" aria-expanded="false" aria-controls="collapsePostQuestion">
+                Poser une question !
+            </button>
+            <div class="collapse" id="collapsePostQuestion">
+                <div class="well">
+                    <input class="textArea" type="text" name="question" id="question">
+                    <button class="sending" type="button" onclick="sendQuestion()">Envoyer</button>
+                    <input class="textArea" type="text" name="question" id="questionLocation" disabled>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="viewAnswersQuestions">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGetResponse" aria-expanded="false" aria-controls="collapseGetResponse">
-            Visualiser les réponses aux questions !
-        </button>
-        <div class="collapse" id="collapseGetResponse">
-            <div class="well">
-                <input class="textArea" type="text" name="questionId" id="questionId">
-                <button class="getting" type="button" onclick="getResponse()">Récupérer la réponse à votre question</button>
-                <div class="objHide">
-                    <label>Question</label>
-                    <input class="textArea" type="text" name="question" id="questionAnswered" disabled>
-                    <label>Réponse</label>
-                    <input class="textArea" type="text" name="response" id="questionResponse" disabled>
+        </section>
+        <section id="answerQuestion">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePostResponse" aria-expanded="false" aria-controls="collapsePostResponse">
+                Répondre à une question !
+            </button>
+            <div class="collapse" id="collapsePostResponse">
+                <div class="well">
+                    <button class="getting" type="button" onclick="getQuestion()">Récupérer une question</button>
+                    <div class="getting respHide">
+                        <input class="textArea" type="text" name="idQuestionGetted" id="idQuestionGetted">
+                        <input class="textArea" type="text" name="questionGetted" id="questionGetted" disabled>
+                    </div>
+                    <div class="getting respHide">
+                        <input class="textArea" type="text" name="response" id="response">
+                        <button class="sending" type="button" onclick="sendResponse()">Répondre</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-</body>
+        </section>
+        <section id="viewAnswersQuestions">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGetResponse" aria-expanded="false" aria-controls="collapseGetResponse">
+                Visualiser les réponses aux questions !
+            </button>
+            <div class="collapse" id="collapseGetResponse">
+                <div class="well">
+                    <input class="textArea" type="text" name="questionId" id="questionId">
+                    <button class="getting" type="button" onclick="getResponse()">Récupérer la réponse à votre question</button>
+                    <div class="objHide">
+                        <label>Question</label>
+                        <input class="textArea" type="text" name="question" id="questionAnswered" disabled>
+                        <label>Réponse</label>
+                        <input class="textArea" type="text" name="response" id="questionResponse" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>

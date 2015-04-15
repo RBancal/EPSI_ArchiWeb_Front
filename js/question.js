@@ -2,10 +2,16 @@
  * Created by ralph on 18/03/15.
  */
 
-var url = "http://localhost:8080/questions";
+var urlLastQuestion = "http://localhost:8080/questions/last";
+var urlQuestion = "http://localhost:8080/questions";
 
 function getQuestion() {
-    // Récupération question avec isAnswered à false.
+    $.get(urlLastQuestion, function(data) {
+        console.log(data);
+
+        $('#idQuestionGetted').val(data._id);
+        $('#questionGetted').val(data.question);
+    });
 
     $('.respHide').show();
 }
@@ -17,7 +23,10 @@ function sendQuestion() {
     questionObject.isAnswered = false;
     questionObject.response = null;
 
-    $.post(url, questionObject, function(data) {
+    $.post(urlQuestion, questionObject, function(data, jqxhr) {
         console.log(data);
+        $('#questionLocation').val(data._id);
     });
+
+    $('#questionLocation').show();
 }

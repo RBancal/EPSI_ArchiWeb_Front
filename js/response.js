@@ -1,11 +1,21 @@
 /**
  * Created by ralph on 30/03/15.
  */
-
-var url = "http://localhost:8080/questions";
+var urlResponse = "http://localhost:8080/responses";
 
 function getResponse () {
-    // Récupération de la réponse à l'aide de l'ID de la question fournie.
+    urlQuestion = $('#questionId').val();
+
+    $.get(urlQuestion, function (data) {
+        console.log(data);
+        $('#questionAnswered').val(data.question);
+        if (data.response === "") {
+            alert('Votre question n\'a pas encore reçue de réponse');
+        }
+        else {
+            $('#questionResponse').val(data.response);
+        }
+    });
 
     $('.objHide').show();
 }
@@ -13,10 +23,11 @@ function getResponse () {
 function sendResponse () {
     var responseObject = {};
 
+    responseObject.idQuestion = $('#idQuestionGetted').val();
     responseObject.isAnswered = true;
     responseObject.response = $('#response').val();
 
-    $.post(url, responseObject, function(data) {
+    $.post(urlResponse, responseObject, function(data) {
         console.log(data);
     });
 }
