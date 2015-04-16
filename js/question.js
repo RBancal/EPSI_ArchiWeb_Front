@@ -7,13 +7,18 @@ var urlQuestion = "http://localhost:8080/questions";
 
 function getQuestion() {
     $.get(urlLastQuestion, function(data) {
-        console.log(data);
+        if (!data) {
+            alert('Il n\'y a pas de questions dans la base')
+        }
+        else {
+            console.log(data);
 
-        $('#idQuestionGetted').val(data._id);
-        $('#questionGetted').val(data.question);
+            $('#idQuestionGetted').val(data._id);
+            $('#questionGetted').val(data.question);
+
+            $('.respHide').show();
+        }
     });
-
-    $('.respHide').show();
 }
 
 function sendQuestion() {

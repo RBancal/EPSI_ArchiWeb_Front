@@ -7,17 +7,22 @@ function getResponse () {
     urlQuestion = $('#questionId').val();
 
     $.get(urlQuestion, function (data) {
-        console.log(data);
-        $('#questionAnswered').val(data.question);
-        if (data.response === "") {
-            alert('Votre question n\'a pas encore reçue de réponse');
+        if (!data) {
+            alert('Il n\'y a pas de questions dans la base');
         }
         else {
-            $('#questionResponse').val(data.response);
+            console.log(data);
+            $('#questionAnswered').val(data.question);
+            if (data.response === "") {
+                alert('Votre question n\'a pas encore reçue de réponse');
+            }
+            else {
+                $('#questionResponse').val(data.response);
+
+                $('.objHide').show();
+            }
         }
     });
-
-    $('.objHide').show();
 }
 
 function sendResponse () {
